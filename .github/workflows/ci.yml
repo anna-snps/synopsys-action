@@ -23,6 +23,8 @@ jobs:
           pip install -r requirements.txt
       - name: Synopsys Action
         uses: synopsys-sig/synopsys-action@v1.0.0
+        env:
+          DETECT_EXCLUDED_DIRECTORIES=.bridge,.github
         with:
           blackduck_apiToken: ${{ secrets.BLACKDUCK_API_TOKEN }}
           blackduck_url: ${{ secrets.BLACKDUCK_URL }}
